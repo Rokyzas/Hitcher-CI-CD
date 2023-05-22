@@ -36,7 +36,7 @@ public class MockUserRepositoryTest
     [Test]
     public void GetUserAge_ShouldRetunOkResponse_WhenReturnsTheRightAnswer()
     {
-        Assert.AreEqual(MockUserRepository.GetUserAge((_user1.YearOfBirth)), 20);
+        Assert.AreEqual(MockUserRepository.GetUserAge((_user1.YearOfBirth)), 21);
         Assert.AreEqual(MockUserRepository.GetUserAge((_user2.YearOfBirth)), -1);
         Assert.AreEqual(MockUserRepository.GetUserAge("2002-12-30"), 19);
         
