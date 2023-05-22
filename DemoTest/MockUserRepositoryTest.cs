@@ -58,7 +58,6 @@ public class MockUserRepositoryTest
             Surname = "Lipkauskas",
             YearOfBirth = "2002-02-12",
             PhoneNumber = "861720382",
-            Address = "Liepu g.2",
             Description = "Statybininkas",
             Email = "Antanas.Lipkauskas@gmail.com"
         };
@@ -70,7 +69,6 @@ public class MockUserRepositoryTest
             Surname = "Sinkevic",
             YearOfBirth = "1992-04-27",
             PhoneNumber = "86292",
-            Address = "Jonu g.2",
             Description = "Vairuotojas",
             Email = "Lukas.Sink@gmail.com"
         };
@@ -126,7 +124,6 @@ public class MockUserRepositoryTest
             Surname = "Koviniene",
             YearOfBirth = "1982-08-22",
             PhoneNumber = "868273625",
-            Address = "Augunu g.9",
             Description = "Taksistas",
             Email = "Audrele.Kovine@gmail.com"
         };
@@ -137,7 +134,6 @@ public class MockUserRepositoryTest
             Surname = "Makalis",
             YearOfBirth = "2001-01-19",
             PhoneNumber = "86829",
-            Address = "Jonu g.2",
             Description = "Kosmetologas",
             Email = "Jonas.Makalelis@gmail.com"
         };
@@ -169,7 +165,6 @@ public class MockUserRepositoryTest
             Surname = "Lipkauskas",
             YearOfBirth = "2002-01-19",
             PhoneNumber = "861720382",
-            Address = "Liepu g.2",
             Description = "Statybininkas",
             Email = "Antanas.Lipkauskas@gmail.com"
         };
@@ -181,7 +176,6 @@ public class MockUserRepositoryTest
             Surname = "Sinkevic",
             YearOfBirth = "1992-01-19",
             PhoneNumber = "86292",
-            Address = "Jonu g.2",
             Description = "Vairuotojas",
             Email = "Lukas.Sink@gmail.com"
         };
@@ -216,7 +210,6 @@ public class MockUserRepositoryTest
             Surname = "Daunoraite",
             YearOfBirth = "2002-10-12",
             PhoneNumber = "867283992",
-            Address = "Jonava",
             Description = "Kirpeja",
             Email = "Gabijuks@gmail.com"
         };
@@ -248,7 +241,6 @@ public class MockUserRepositoryTest
             Surname = "Samusiovaite",
             YearOfBirth = "2002-02-12",
             PhoneNumber = "860569664",
-            Address = "Ukmerge",
             Description = "vaikas",
             Email = "kamile@gmail.com"
         };
@@ -259,7 +251,6 @@ public class MockUserRepositoryTest
             Surname = "Nemanius",
             YearOfBirth = "1992-02-12",
             PhoneNumber = "860569882",
-            Address = "Šiauliai",
             Description = "Pirikupas",
             Email = "Domas.Nemaniuks@gmail.com"
         };
