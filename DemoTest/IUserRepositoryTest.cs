@@ -34,8 +34,7 @@ public class IUserRepositoryTest
     {
         Assert.AreEqual(IUserRepository.GetUserAge((_user1.YearOfBirth)), 21);
         Assert.AreEqual(IUserRepository.GetUserAge((_user2.YearOfBirth)), -1);
-        Assert.AreEqual(IUserRepository.GetUserAge("2002-12-20"), 19);
-
+        Assert.AreEqual(IUserRepository.GetUserAge("2002-12-20"), 20);
     }
     
     [Test]
