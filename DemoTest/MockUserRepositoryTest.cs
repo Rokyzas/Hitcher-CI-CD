@@ -28,8 +28,8 @@ public class MockUserRepositoryTest
     [SetUp]
     public void Setup()
     {
-        _user1 = new UserModel() { Name = "Kamile", Surname = "Samusiovaite", YearOfBirth = "2002-02-12", PhoneNumber = "860569664"};
-        _user2 = new UserModel() { Name = "Domas", Surname = "Nemanius", YearOfBirth = "2023-09-12" };
+        _user1 = new UserModel() { Name = "Kamile", Surname = "Samusiovaite", Password="1", YearOfBirth = "2002-02-12", PhoneNumber = "860569664"};
+        _user2 = new UserModel() { Name = "Domas", Surname = "Nemanius", Password = "1", YearOfBirth = "2023-09-12" };
         _users = new List<UserModel> { _user1, _user2 };
     }
 
@@ -56,6 +56,7 @@ public class MockUserRepositoryTest
             Id = Guid.Parse("86cb5f75-80f0-410e-9ab6-26ed5bdb7ff4"),
             Name = "Antanas",
             Surname = "Lipkauskas",
+            Password = "1",
             YearOfBirth = "2002-02-12",
             PhoneNumber = "861720382",
             Description = "Statybininkas",
@@ -67,6 +68,7 @@ public class MockUserRepositoryTest
             Id = Guid.Parse("86cb5f75-80f0-410e-9ab6-26ed5bdb7ff5"),
             Name = "Lukas",
             Surname = "Sinkevic",
+            Password = "1",
             YearOfBirth = "1992-04-27",
             PhoneNumber = "86292",
             Description = "Vairuotojas",
@@ -122,6 +124,7 @@ public class MockUserRepositoryTest
         {
             Name = "Audrele",
             Surname = "Koviniene",
+            Password = "1",
             YearOfBirth = "1982-08-22",
             PhoneNumber = "868273625",
             Description = "Taksistas",
@@ -132,6 +135,7 @@ public class MockUserRepositoryTest
         {
             Name = "Jonas",
             Surname = "Makalis",
+            Password = "1",
             YearOfBirth = "2001-01-19",
             PhoneNumber = "86829",
             Description = "Kosmetologas",
@@ -163,6 +167,7 @@ public class MockUserRepositoryTest
             Id = Guid.Parse("86cb5f75-80f0-410e-9ab6-26ed5bdb7ff4"),
             Name = "Antanas",
             Surname = "Lipkauskas",
+            Password = "1",
             YearOfBirth = "2002-01-19",
             PhoneNumber = "861720382",
             Description = "Statybininkas",
@@ -174,6 +179,7 @@ public class MockUserRepositoryTest
             Id = Guid.Parse("86cb5f75-80f0-410e-9ab6-26ed5bdb7ff5"),
             Name = "Lukas",
             Surname = "Sinkevic",
+            Password = "1",
             YearOfBirth = "1992-01-19",
             PhoneNumber = "86292",
             Description = "Vairuotojas",
@@ -208,6 +214,7 @@ public class MockUserRepositoryTest
             Id = Guid.Parse("86cb5f75-80f0-410e-9ab6-26ed5bdb7ff5"),
             Name = "Gabija",
             Surname = "Daunoraite",
+            Password = "1",
             YearOfBirth = "2002-10-12",
             PhoneNumber = "867283992",
             Description = "Kirpeja",
@@ -239,6 +246,7 @@ public class MockUserRepositoryTest
             Id = Guid.Parse("86cb5f75-80f0-410e-9ab6-26ed5bdb7ff5"),
             Name = "Kamile",
             Surname = "Samusiovaite",
+            Password = "1",
             YearOfBirth = "2002-02-12",
             PhoneNumber = "860569664",
             Description = "vaikas",
@@ -249,6 +257,7 @@ public class MockUserRepositoryTest
             Id = Guid.Parse("86cb5f75-80f0-410e-9ab6-26ed5bdb7ff4"),
             Name = "Domas",
             Surname = "Nemanius",
+            Password = "1",
             YearOfBirth = "1992-02-12",
             PhoneNumber = "860569882",
             Description = "Pirikupas",
