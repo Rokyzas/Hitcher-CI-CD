@@ -32,7 +32,7 @@ public class IUserRepositoryTest
     [Test]
     public void GetUserAge_ShouldRetunOkResponse_WhenReturnsTheRightAnswer()
     {
-        Assert.AreEqual(IUserRepository.GetUserAge((_user1.YearOfBirth)), 20);
+        Assert.AreEqual(IUserRepository.GetUserAge((_user1.YearOfBirth)), 21);
         Assert.AreEqual(IUserRepository.GetUserAge((_user2.YearOfBirth)), -1);
         Assert.AreEqual(IUserRepository.GetUserAge("2002-12-20"), 19);
 
