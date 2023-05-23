@@ -306,7 +306,15 @@ public class HomeController : Controller
 
         return View("Datecher", info ?? new SearchResults());
     }
-
+    public IActionResult ChatInterface()
+    {
+        var StringId = HttpContext.Session.GetString(LoggedUser);
+        Guid id = Guid.Parse(StringId);
+        var name = _userRepository.GetUser(id).Name;
+        ViewData["Username"] = name;
+        ViewData["Id"] = StringId;
+        return PartialView("ChatInterface");
+    }
     public IActionResult Calculator()
     {
         var StringId = HttpContext.Session.GetString(LoggedUser);
