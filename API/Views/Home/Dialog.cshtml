@@ -1,0 +1,30 @@
+﻿<div id="rating-dialog" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Rate Driver</h4>
+            </div>
+            <div class="modal-body">
+                <form id="rating-form">
+                    <input type="hidden" id="travel-id" name="TravelId" value="" />
+                    <div class="form-group">
+                        <label for="comfort-rating">Comfort Rating:</label>
+                        <input type="number" class="form-control" id="comfort-rating" name="ComfortRating" min="1" max="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="personality-rating">Personality Rating:</label>
+                        <input type="number" class="form-control" id="personality-rating" name="PersonalityRating" min="1" max="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="overall-rating">Overall Rating:</label>
+                        <input type="number" class="form-control" id="overall-rating" name="OverallRating" min="1" max="5" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button>
+                <button type="button" class="btn btn-primary" onclick="submitRating()">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+@* @model List<UserModel> *@
+@model Microsoft.EntityFrameworkCore.DbSet<UserModel>
+@using WebApplication2.Models.User
+
+
+@{
+    ViewData["Title"] = "Users";
+    ViewData["API_KEY"] = "AIzaSyDw5emwFV4oym-7c68mXqJIGxN5pboVwZQ";
+}
+
+<br><br>
+<div class="text-center">
+    <img src="~/img/Users1.jpg" alt="user" width=650px height=150px>
+	<br><br>
+</div>
+   
+<table class="table table-borderless table-responsive p-4">
+    <thead>
+    <tr class="border-bottom">
+        <th>
+            <span class="ml-2">Id</span>
+        </th>
+        <th>
+            <span class="ml-2">Driver</span>
+        </th>
+        <th>
+            <span class="ml-2">Date Of Birth</span>
+        </th>
+        @* <th> *@
+        @*     <span class="ml-2">User Type</span> *@
+        @* </th> *@
+        <th>
+            <span class="ml-2">Phone Number</span>
+        </th>
+        <th>
+            <span class="ml-2">Address</span>
+        </th>
+        <th>
+            <span class="ml-2">Action</span>
+        </th>
+    </tr>
+    </thead>
+    @foreach (var user in Model)
+    {
+        <tr class="border-bottom">
+            <td>
+                <div class="p-2">
+                    <span class="d-block font-weight-bold">@Html.DisplayFor(modelItem => user.Id)</span>
+                </div>
+            </td>
+            <td>
+                <div class="p-2 d-flex flex-row align-items-center mb-2">
+                    <img src="~/img/profile.jpg" width="40" class="rounded-circle">
+                    <div class="d-flex flex-column p-2">
+                        <span class="d-block font-weight-bold">@Html.DisplayFor(modelItem => user.Name) @Html.DisplayFor(modelItem => user.Surname) </span>
+                        <small class="text-muted">@Html.DisplayFor(modelItem => user.Email)</small>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="p-2">
+                    <span class="font-weight-bold">@Html.DisplayFor(modelItem => user.YearOfBirth)</span>
+                </div>
+            </td>
+            @* <td> *@
+            @*     <div class="p-2"> *@
+            @*         <span class="font-weight-bold">@Html.DisplayFor(modelItem => user.Type)</span> *@
+            @*     </div> *@
+            @* </td> *@
+            <td>
+                <div class="p-2">
+                    <span class="font-weight-bold">@Html.DisplayFor(modelItem => user.PhoneNumber)</span>
+                </div>
+            </td>
+            @*<td>
+                <div class="p-2">
+                    <span class="font-weight-bold">@Html.DisplayFor(modelItem => user.Address)</span>
+                </div>
+        </td>*@
+            <td>
+                <div class="p-2">
+                    <div class="neon-button" type="button">
+                        @Html.ActionLink("Edit", "Edit", new { id = user.Id }, new { @style = "color: #FFFFFF" })
+                    </div>
+                    <div class="neon-button" type="button">
+                        @Html.ActionLink("Delete", "Delete", new { id = user.Id }, new { @style = "color: #FFFFFF" })
+                    </div>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+
+ 

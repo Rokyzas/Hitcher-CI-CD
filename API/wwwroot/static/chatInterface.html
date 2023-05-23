@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Real-Time Chat with SignalR</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        #chatBox {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: scroll;
+            background-color: #f2f2f2;
+        }
+
+        .message-container {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 18px; /* Increased font-size */
+        }
+
+        .message.sent {
+            background-color: #007bff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            color: #fff;
+            align-self: flex-end;
+            text-align: right;
+            margin-left: auto;
+            font-size: 18px; /* Increased font-size */
+        }
+
+        .message.received {
+            background-color: #28a745;
+            border-radius: 5px;
+            padding: 10px 15px;
+            color: #fff;
+            align-self: flex-start;
+            text-align: left;
+            margin-right: auto;
+            font-size: 18px; /* Increased font-size */
+        }
+
+        #messagePanel {
+            background-color: #f2f2f2;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        #message {
+            flex-grow: 1;
+            margin-right: 10px;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px; /* Increased font-size */
+        }
+
+        #sendButton {
+            width: 150px; /* Increased width */
+            height: 40px; /* Increased height */
+            border-radius: 15px;
+            background-color: #0088ff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.13/signalr.min.js"></script>
+</head>
+<body>
+    <div id="chatBox"></div>
+    <div id="messagePanel">
+        <input type="text" id="message" placeholder="Enter your message" />
+        <button id="sendButton">Send</button>
+    </div>
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+        var username = generateRandomName(); // Generate username initially
+
+        function generateRandomName() {
+            var adjectives = ["Happy", "Silly", "Clever", "Cool", "Witty", "Brave", "Kind", "Lucky"];
+            var nouns = ["Cat", "Dog", "Panda", "Tiger", "Elephant", "Lion", "Monkey", "Dolphin"];
+            var adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            var noun = nouns[Math.floor(Math.random() * nouns.length)];
+            return adjective + noun;
+        }
+
+        $("#sendButton").click(function () {
+            var message = $("#message").val();
+            connection.invoke("SendMessage", username, message);
+            $("#message").val("").focus();
+        });
+
+        connection.on("ReceiveMessage", function (user, message, id) {
+            var encodedUser = $("<div />").text(user).html();
+            var encodedMsg = $("<div />").text(message).html();
+            var messageClass = user === username ? "sent" : "received";
+            var messageElement = $("<div></div>").addClass("message " + messageClass).html("<strong>" + encodedUser + ":</strong> " + encodedMsg);
+            var messageContainer = $("<div></div>").addClass("message-container").addClass(messageClass).append(messageElement);
+            $("#chatBox").append(messageContainer);
+            $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
+        });
+
+        connection.start().then(function () {
+            console.log("Connected!");
+        }).catch(function (err) {
+            console.error(err.toString());
+        });
+    </script>
+</body>
+</html>
