@@ -4,10 +4,12 @@ using WebApplication2.Models;
 using WebApplication2.Models.User;
 using WebApplication2.Models.Travel;
 using WebApplication2.Models.Errors;
+using SignalRChatApp.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSignalR();
 builder.Services.AddControllersWithViews();
 // https://stackoverflow.com/questions/60322252/asp-net-core-web-app-di-error-some-services-are-not-able-to-be-constructed-er
 builder.Services.AddScoped<IUserRepository, MockUserRepository>();//Dependancy injection for using UserModel
@@ -43,7 +45,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 
-
+app.MapHub<ChatHub>("/chatHub");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
